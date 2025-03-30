@@ -1,30 +1,28 @@
 # Study Neural Net
 
-### Example of a Neural Net Expression
-
-Below is a slightly contrived example showing a number of possible supported operations:
+### Example of a Neural Net Mathematical Expression
 
 ```python
 #input
-a = Value(-4.0)
-b = Value(2.0)
+x = Value(-4.0)
+y = Value(2.0)
 
 #intermediate variable
-c = a + b
-d = a * b + b**3
-c += c + 1
-c += 1 + c + (-a)
-d += d * 2 + (b + a).relu()
-d += 3 * d + (b - a).relu()
-e = c - d
-f = e**2
+a = x+ y
+b= x * y + y**3
+a += a + 1
+a += 1 + a + (-y)
+b += b * 2 + (y + x).relu()
+b += 3 * d + (y - x).relu()
+c = a - b
+d = c**2
 
 #output
-g = f / 2.0
-g += 10.0 / f
+z = d / 2.0
+z += 10.0 / d
 
-print(f'{g.data:.4f}') # prints 24.7041, the outcome of this forward pass
+print(f'{z.data:.4f}') # prints 24.7041, the outcome of this forward pass
 g.backward()
-print(f'{a.grad:.4f}') # prints 138.8338, i.e. the numerical value of dg/da
-print(f'{b.grad:.4f}') # prints 645.5773, i.e. the numerical value of dg/db
+print(f'{x.grad:.4f}') # prints 138.8338, i.e. the numerical value of dg/da
+print(f'{y.grad:.4f}') # prints 645.5773, i.e. the numerical value of dg/db
 ```
