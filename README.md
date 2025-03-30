@@ -22,7 +22,7 @@ z = d / 2.0
 z += 10.0 / d
 
 print(f'{z.data:.4f}') # prints 24.7041, the outcome of this forward pass
-g.backward()
-print(f'{x.grad:.4f}') # prints 138.8338, i.e. the numerical value of dg/da
-print(f'{y.grad:.4f}') # prints 645.5773, i.e. the numerical value of dg/db
+z.backward()
+print(f'{x.grad:.4f}') # prints 138.8338, i.e. the numerical value of dz/dx
+print(f'{y.grad:.4f}') # prints 645.5773, i.e. the numerical value of dz/dy
 ```
